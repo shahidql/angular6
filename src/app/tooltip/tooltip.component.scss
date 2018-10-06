@@ -1,0 +1,60 @@
+tooltip {
+    display: inline-block;
+}
+.btn-secondary {
+    border: 1px solid blue;
+    background: #ccc;
+    color: #000;
+    font-size: 12px;
+    padding: 5px;
+    text-align: center;
+    display: inline-block;
+}
+.ngtooltip {
+    position: absolute;
+    display: none;
+    opacity: 0;
+    height: 37px;
+    &.active {
+        display: inline-block;
+        opacity: 1;
+    }
+    span {
+     position: relative;
+     color: #fff;
+     font-size: 11px;
+     text-align:center;
+     text-transform: normal;
+     padding:5px;
+     background: #333;
+     display: inline-block;
+     border-radius: 3px;
+     line-height: 19px;
+     &::after {
+        content: ' ';
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        margin-top: -2px;
+        margin-left: -10px;
+        z-index: 50;
+        height: 0;
+        width: 0;
+        border-width: 10px;
+        border-style: solid;
+        border-top-color: #333;
+        border-bottom-color: transparent;
+        border-right-color: transparent;
+        border-left-color: transparent;
+     }
+     &.bottom {
+         &::after {
+            top: -17px;
+            border-bottom-color: #333;
+            border-top-color: transparent;
+            border-right-color: transparent;
+            border-left-color: transparent;
+         }
+     }
+    }
+}
